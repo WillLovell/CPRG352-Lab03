@@ -1,7 +1,7 @@
 <%-- 
-    Document   : sayHello
-    Created on : 22-Sep-2021, 12:09:49 PM
-    Author     : willi
+    Document   : arithmetic
+    Created on : 22-Sep-2021, 11:08:21 AM
+    Author     : will
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,10 +9,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Age Calculator</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <h2>Hello ${firstName} ${lastName}</h2>
+        <h1>Arithmetic Calculator</h1>
+        <form method="POST" action="age">
+            
+            <label>Enter your age</label>
+            <input type="text" name="age" value="${age}">
+            <br>
+            <input type="submit" value="Age next birthday">
+               
+        </form>
+        <p>${message}</p>
+        <a href="WEB-INF/arithmetic.jsp">Arithmetic Calculator</a>
     </body>
 </html>

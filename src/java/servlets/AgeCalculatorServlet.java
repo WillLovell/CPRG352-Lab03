@@ -41,8 +41,8 @@ public class AgeCalculatorServlet extends HttpServlet {
         }
         else{
             int newAge = Integer.parseInt(age);
-            newAge += 1;
-             request.setAttribute("message","Your age next birthday will be " + newAge);
+            newAge ++;
+            request.setAttribute("message","Your age next birthday will be " + newAge);
             
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
             return;

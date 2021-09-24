@@ -1,5 +1,5 @@
 <%-- 
-    Document   : agecalculator
+    Document   : age calc
     Created on : 22-Sep-2021, 11:08:21 AM
     Author     : will
 --%>
@@ -22,6 +22,6 @@
                
         </form>
         <p>${message}</p>
-        <a href="WEB-INF/arithmetic.jsp">Arithmetic Calculator</a>
+        <a href="WEB-INF/arithmeticcalculator.java">Arithmetic Calculator</a>
     </body>
 </html>
