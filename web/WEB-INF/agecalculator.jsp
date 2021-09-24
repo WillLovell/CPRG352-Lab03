@@ -22,5 +22,6 @@
                
         </form>
         <p>${message}</p>
+        <a href="WEB-INF/arithmetic.jsp">Arithmetic Calculator</a>
     </body>
 </html>

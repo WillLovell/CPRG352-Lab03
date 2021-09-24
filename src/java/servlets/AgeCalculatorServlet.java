@@ -32,7 +32,7 @@ public class AgeCalculatorServlet extends HttpServlet {
             return;
         }
         
-        else if(age.startsWith("([A-z])"))
+        if(age.matches("[a-zA-Z]+"))
         {
             request.setAttribute("message","You must enter a number.");
             
