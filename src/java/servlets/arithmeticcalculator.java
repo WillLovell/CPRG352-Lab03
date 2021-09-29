@@ -11,8 +11,9 @@ public class arithmeticcalculator extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/WEB-INF/arithmetic.jsp").forward(request, response);
         //IMPORTANT
+        request.setAttribute("result","---");
         return;
     }
 
@@ -20,31 +21,50 @@ public class arithmeticcalculator extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String age = request.getParameter("age");
-        //request.setAttribute("age", age);
+        String first = request.getParameter("first");
+        String second = request.getParameter("second");
+        request.setAttribute("first", first);
+        request.setAttribute("second", second);
+        
+        
       
         
-        if( age == null || age.equals(""))
+        if( first == null || first.equals("") ||  second == null || second.equals(""))
         {
-            request.setAttribute("message","You must give your current age.");
+            request.setAttribute("result","invalid");
             
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/WEB-INF/arithmetic.jsp").forward(request, response);
             return;
         }
         
-        if(age.matches("[a-zA-Z]+"))
+        if(first.matches("[a-zA-Z]+") || second.matches("[a-zA-Z]+"))
         {
-            request.setAttribute("message","You must enter a number.");
+            request.setAttribute("result","invalid");
             
-            getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/WEB-INF/arithmetic.jsp").forward(request, response);
             return;
         }
         else{
-            int newAge = Integer.parseInt(age);
-            newAge += 1;
-             request.setAttribute("message","Your age next birthday will be " + newAge);
             
-            getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
+            String math = request.getParameter("math");
+            
+            int firstNum = Integer.parseInt(first);
+            int secondNum = Integer.parseInt(second);
+            
+            if(math.equals("+")){
+                request.setAttribute("result",(firstNum+secondNum));
+            }
+            if(math.equals("-")){
+                request.setAttribute("result", (firstNum - secondNum));
+            }
+            if(math.equals("*")){
+                request.setAttribute("result", (firstNum * secondNum));
+            }
+            if(math.equals("%")){
+                request.setAttribute("result", (firstNum % secondNum));
+            }
+           
+            getServletContext().getRequestDispatcher("/WEB-INF/arithmetic.jsp").forward(request, response);
             return;
         }
         

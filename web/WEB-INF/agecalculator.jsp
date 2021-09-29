@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Age Calculator</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>Age Calculator</h1>
@@ -22,6 +23,6 @@
                
         </form>
         <p>${message}</p>
-        <a href="WEB-INF/arithmeticcalculator.java">Arithmetic Calculator</a>
+        <a href="arithmetic">Arithmetic Calculator</a>
     </body>
 </html>

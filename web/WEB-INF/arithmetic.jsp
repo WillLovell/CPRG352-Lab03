@@ -9,19 +9,28 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Age Calculator</title>
+        <title>Arithmetic Calculator</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>Arithmetic Calculator</h1>
-        <form method="POST" action="age">
+        <form method="POST" action="arithmetic">
             
-            <label>Enter your age</label>
-            <input type="text" name="age" value="${age}">
+            <label>First:</label>
+            <input type="text" name="first" value="${first}">
             <br>
-            <input type="submit" value="Age next birthday">
+            <label>Second:</label>
+            <input type="text" name="second" value="${second}">
+            <br>
+            <p>Result: ${result}</p>
+            
+            <input type="submit" value="+" name="math">
+            <input type="submit" value="-" name="math">
+            <input type="submit" value="*" name="math">
+            <input type="submit" value="%" name="math">
                
         </form>
         <p>${message}</p>
-        <a href="WEB-INF/arithmetic.jsp">Arithmetic Calculator</a>
+        <a href="age">Age Calculator</a>
     </body>
 </html>
